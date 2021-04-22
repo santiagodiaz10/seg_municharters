@@ -1,4 +1,3 @@
-
 ------
 title: This is a replication code in *R* for my working paper "Spatial Inequalities Shaping Institutional Design. Municipal Charters in Argentina"
 ------
