@@ -1,1 +1,1 @@
-# seg_municharters
+# This is a replication code for my working paper "Spatial Inequalities Shaping Institutional Design. Municipal Charters in Argentina"
