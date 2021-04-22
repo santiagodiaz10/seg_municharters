@@ -1,6 +1,6 @@
 ---
 title: "Trying to use rmd to create readme"
-output: 
+output: github_document
 keep_md: true
 ---
 
