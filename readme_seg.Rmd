@@ -1,6 +1,7 @@
 ---
 title: "Trying to use rmd to create readme"
-output: html_document
+output: 
+keep_md: true
 ---
 
 ```{r setup, include=FALSE}
