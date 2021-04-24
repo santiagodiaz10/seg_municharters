@@ -8,7 +8,7 @@ This is a replication code in *R* for "Spatial Inequalities Shaping Institutiona
 
 ![](images/segregation_plano.PNG)<!-- -->
 ### Unsatisfied Basic Needs (UBN) Gini Segregation:
-![Segregation in Cordoba](images/cba_gini_segregation.PNG)<!-- -->
+![Segregation in Cordoba](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_gini_segregation.png)<!-- -->
 
 
 
