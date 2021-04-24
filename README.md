@@ -6,9 +6,11 @@ This is a replication code in *R* for "Spatial Inequalities Shaping Institutiona
 
 
 ### Unsatisfied Basic Needs (UBN) Gini Segregation:
-![Segregation in Cordoba](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_gini_segregation.png)<!-- -->
-
-
+<!-- ![Segregation in Cordoba](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_gini_segregation.png)
+-->
+![Segregation in Cordoba](./images/cba_gini_segregation.png)
 
 ### Time to Reform Municipal Charters (MC) in years:
-![Time to reform MC in Cordoba province](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_time_to_co.png)<!-- -->
+<!-- ![Time to reform MC in Cordoba province](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_time_to_co.png)
+-->
+![Time to reform MC in Cordoba province](./images/cba_time_to_co.png)
