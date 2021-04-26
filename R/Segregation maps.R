@@ -1,12 +1,9 @@
 #Load packages:
 library(tidyverse)
-library(sf)
-library(leaflet)
-library(rgeos)
-library(OasisR)
-library(viridis)
-library(ggpubr)
-library(here)
+library(sf) # to work with spatial vector data
+library(leaflet) # interactive maps
+library(OasisR) # to obtain spatial segregation measures
+library(here) # paths to project's files.
 
 #######################################################
 # Load Files:
@@ -41,7 +38,7 @@ cor_co_year <- readxl::read_xlsx(here("data/Cordoba_CO.xlsx"), range = "A2:G431"
 #1.1 Names in Redatam software:
 name_mun_red10_df <- cor_co_year %>% select(name_mun_red10, pob_per_mun_2010) %>% arrange(name_mun_red10) %>% 
   filter(pob_per_mun_2010>8000) #Used to simplify analisys because CO> 10,000
-name_mun_red10_df$name_mun_red10 <- str_replace(name_mun_red10_df$name_mun_red10, "?", "N") #Replace ? por n.
+name_mun_red10_df$name_mun_red10 <- str_replace(name_mun_red10_df$name_mun_red10, "Ñ", "N") #Replace Ñ por n.
 name_mun_red10_df <- unique(name_mun_red10_df) #removing duplicates
 
 #1.2 Names in shape files:
@@ -67,7 +64,7 @@ name_mun_red10_df <- name_mun_red10_df %>% group_by(name.matched) %>% mutate(dup
 #2.1 Corrections to the dataset to merge:
 cor_co_year <- cor_co_year %>% arrange(name_mun_red10) %>% 
   filter(pob_per_mun_2010>8000) #Used to simplify analisys because CO> 10,000
-cor_co_year$name_mun_red10 <- str_replace(name_mun_red10_df$name_mun_red10, "?", "N")
+cor_co_year$name_mun_red10 <- str_replace(name_mun_red10_df$name_mun_red10, "Ñ", "N")
 
 #2.2 Corrections to the main data set:
 muni_shp_cor$NAM <- iconv(muni_shp_cor$NAM,from="UTF-8",to="ASCII//TRANSLIT") #Removes tilde to non-tilde
@@ -80,11 +77,11 @@ muni_cor_CO_8m_shp <- muni_cordoba_CO_shp %>% select(-pob_per_mun_2010.y) %>%
   rename(pob_per_mun_2010 = pob_per_mun_2010.x) #extra cleaning
 
 #------------------------------------------------------
-# 3- Joining datasets with geo data:
-#3.1 Adding data on NBI to geo dataset distribution per census radio:
+# 3- Joining datasets with geolocalization data:
+#3.1 Adding data on NBI to geolocalization dataset distribution per census tracts:
 cordoba_nbi <- left_join(radios_cordoba, cordoba_nbi_ng, by = c("link"))
 
-#3.2 Joining both shapefiles POR GEOLOCALIZACION: 
+#3.2 Joining both shapefiles by geolocalization: 
 muni_cor_CO_8m_shp<- st_transform(muni_cor_CO_8m_shp, crs = 4326 ) 
 cordoba_nbi<- st_transform(cordoba_nbi, crs = 4326 ) 
 
