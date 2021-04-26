@@ -9,7 +9,7 @@ This repository contains data and code to reproduce interactive maps that underp
 For this case study, I have adapted the code to showcase an example for municipalities in Cordoba province. To obtain the interactive maps below, first download the data files from **`data`** and then run the **`R/segregation_maps.R`** script. The file contains self-explanatory code for easily reproducing the results.
 
 
-### Figure 1: Unsatisfied Basic Needs (UBN) Gini Segregation:
+### Figure 1: Unsatisfied Basic Needs (UBN-2010 Census) Gini Segregation:
 <!-- ![Segregation in Cordoba](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_gini_segregation.png)
 -->
 
