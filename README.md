@@ -6,7 +6,7 @@ This repository contains data and code to reproduce interactive maps that underp
 
 ## Reproducibility
 
-For this case study, I have adapted the code to showcase an example for municipalities in Cordoba province. To obtain the interactive maps below, first download the data files from **`data`** and then run the **`R/segregation_maps.R`** script. The file contains self-explanatory code for easily reproducing the results.
+For this case study, I have adapted the code to showcase an example for municipalities in Cordoba province. To obtain the interactive maps below, first download the data files from **`data/`** and then run the **`R/segregation_maps.R`** script. The file contains self-explanatory code for easily reproducing the results. Georeferenced maps are handled on-the-fly using virtual file systems **`/vsizip`**, so maps will be downloaded, decompressed and loaded directly to *R*. Figures 1 and 2 are captures of the interactive maps obtained as final output.
 
 
 ### Figure 1: Unsatisfied Basic Needs (UBN-2010 Census) Gini Segregation:
@@ -25,6 +25,11 @@ knitr::include_graphics("./images/cba_gini_segregation.PNG",  error = F)
 <!-- ![Time to reform MC in Cordoba province](https://github.com/santiagodiaz10/seg_municharters/blob/main/images/cba_time_to_co.png)
 -->
 ![Time to reform MC in Cordoba province](./images/cba_time_to_co.png)
+
+## Sources:
+
+* Georeferenced maps and Unsatisfied Basic Needs (UBN) are from The National Institute of Statistics and Censuses [INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-QuienesSomosEng). Census 2010 data at the tract level can be processed online using [REDATAM software - ECLAC](https://redatam.indec.gob.ar/).
+* Georeferenced municipal areas are from the National Geographic Institute [IGN](https://www.ign.gob.ar/).
 
 ## License
 
