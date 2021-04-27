@@ -9,7 +9,7 @@ library(here) # path to project's files.
 # Load Files:
 #######################################################
 
-#Load from web geo-shape municipalities: #Read file and unzip in virtual file system "vsizip"
+#Load from web georeferenced shape of municipalities: Reads file and unzip in virtual file system.
 url_ign <- "http://www.ign.gob.ar/descargas/geodatos/SHAPES/ign_municipio.zip/ign_municipio"
 muni_shp <- st_read(file.path("/vsizip//vsicurl", url_ign), layer = "ign_municipio")
 muni_shp_cor <- muni_shp %>%  mutate(IDPROV = str_sub(IN1, 1, 2)) %>% filter(IDPROV == 14) #create IDPROV using string, and then filter
@@ -26,7 +26,7 @@ cordoba_nbi_ng <- radios_nbi %>% rename(link = "Código", H_sinNBI= "Hogares sin
   mutate(H_TOTAL= H_sinNBI+H_NBI, IDPROV = str_sub(link, 1, 2), link = as.character(link), per_H_NBI=H_NBI/H_TOTAL) %>% 
   filter(IDPROV == 14) %>% select(link, H_sinNBI, H_NBI, H_TOTAL, per_H_NBI) %>%  arrange(link)
 
-#Data on Municipal Charters: Multiple sources. Check wp for more information on this. 
+#Data on Municipal Charters: Multiple sources. Check Working Paper for more information on this. 
 cor_co_year <- readxl::read_xlsx(here("data/Cordoba_CO.xlsx"), range = "A2:G431", col_names = TRUE)
 
 #######################################################
@@ -49,7 +49,7 @@ NAM_df <- unique(NAM_df) #removing duplicates
 #1.3  Matching string variables loop:
 name_mun_red10_df$name.matched <- "" # Creating an empty column
 for(i in 1:dim(name_mun_red10_df)[1]) {
-  x <- agrep(name_mun_red10_df$name_mun_red10[i], NAM_df$NAM, #Funcition that matches name in a variable 
+  x <- agrep(name_mun_red10_df$name_mun_red10[i], NAM_df$NAM, #Function that matches name in a variable 
              ignore.case=TRUE, value=TRUE,
              max.distance = 0.01, useBytes = TRUE)
   x <- paste0(x,"") # Pasting values if there is a match
