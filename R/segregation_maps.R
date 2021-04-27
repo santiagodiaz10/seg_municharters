@@ -3,7 +3,7 @@ library(tidyverse)
 library(sf) # to work with spatial vector data
 library(leaflet) # interactive maps
 library(OasisR) # to obtain spatial segregation measures
-library(here) # paths to project's files.
+library(here) # path to project's files.
 
 #######################################################
 # Load Files:
