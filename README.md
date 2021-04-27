@@ -26,7 +26,7 @@ knitr::include_graphics("./images/cba_gini_segregation.PNG",  error = F)
 -->
 ![Time to reform MC in Cordoba province](./images/cba_time_to_co.png)
 
-## Sources:
+## Sources
 
 * Georeferenced maps and Unsatisfied Basic Needs (UBN) are from The National Institute of Statistics and Censuses [INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-QuienesSomosEng). Census 2010 data at the tract level can be processed online using [REDATAM software - ECLAC](https://redatam.indec.gob.ar/).
 * Georeferenced municipal areas are from the National Geographic Institute [IGN](https://www.ign.gob.ar/).
